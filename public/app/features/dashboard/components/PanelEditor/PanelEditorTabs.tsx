@@ -8,6 +8,7 @@ import { TransformationsEditor } from '../TransformationsEditor/TransformationsE
 import { DashboardModel, PanelModel } from '../../state';
 import { CoreEvents } from 'app/types';
 import { PanelEditorTab, PanelEditorTabId } from './types';
+import { VuMlPanel } from '../VuMlPanel/VuMlPanel';
 
 interface PanelEditorTabsProps {
   panel: PanelModel;
@@ -44,6 +45,8 @@ export class PanelEditorTabs extends PureComponent<PanelEditorTabsProps> {
       case PanelEditorTabId.Transform:
         const transformations = panel.getTransformations() ?? [];
         return transformations.length;
+      case PanelEditorTabId.VuMl:
+        return 1;
     }
 
     return null;
@@ -78,6 +81,7 @@ export class PanelEditorTabs extends PureComponent<PanelEditorTabsProps> {
           {activeTab.id === PanelEditorTabId.Query && <QueriesTab panel={panel} dashboard={dashboard} />}
           {activeTab.id === PanelEditorTabId.Alert && <AlertTab panel={panel} dashboard={dashboard} />}
           {activeTab.id === PanelEditorTabId.Transform && <TransformationsEditor panel={panel} />}
+          {activeTab.id === PanelEditorTabId.VuMl && <VuMlPanel panel={panel} />}
         </TabContent>
       </div>
     );

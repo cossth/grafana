@@ -10,6 +10,7 @@ export enum PanelEditorTabId {
   Transform = 'transform',
   Visualize = 'visualize',
   Alert = 'alert',
+  VuMl = 'vu',
 }
 
 export enum DisplayMode {

@@ -43,6 +43,16 @@ export const getPanelEditorTabs = memoizeOne((location: LocationState, plugin?: 
       active: false,
     });
   }
+  console.log(getConfig());
+  console.log(plugin.meta);
+  if (plugin.meta.id.startsWith('vuml-')) {
+    tabs.push({
+      id: PanelEditorTabId.VuMl,
+      text: 'vuML',
+      icon: 'bell',
+      active: false,
+    });
+  }
 
   const activeTab = tabs.find(item => item.id === (location.query.tab || defaultTab)) ?? tabs[0];
   activeTab.active = true;
