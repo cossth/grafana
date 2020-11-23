@@ -195,7 +195,7 @@ class NumberColumn extends FunctionalVector<number> {
     }
 
     // The conversion operations are always silent, never give errors,
-    // but if the bigint is too huge and won’t fit the number type,
+    // but if the bigint is too huge and won't fit the number type,
     // then extra bits will be cut off, so we should be careful doing such conversion.
     // See https://javascript.info/bigint
     return Number(v);
