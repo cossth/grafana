@@ -1,14 +1,21 @@
+import { Button, HorizontalGroup } from '@grafana/ui';
 import React from 'react';
 import { ModelOptions } from './ids';
-import { vuMlModel } from './vuMlModel';
+import { ModelProps, vuMlModel, vuMLModelOptions } from './vuMlModel';
 
 export interface ForcastingOptions {}
 
-export const fmEditor: React.FC<{}> = () => {
-  return <input type="text" />;
+export const ForecastingEditor: React.FC<ModelProps & {}> = ({ modelId, updateModel, modelData }) => {
+  let { id, name, options } = modelData;
+  return (
+    <HorizontalGroup>
+      <h1>{name}</h1>
+      <Button onClick={e => updateModel(id, options)}>Update</Button>
+    </HorizontalGroup>
+  );
 };
 
-export const forecastingModel: vuMlModel<ForcastingOptions> = {
+export const forecastingModel: vuMlModel<vuMLModelOptions & ForcastingOptions> = {
   ...ModelOptions.forecasting,
-  editor: () => <input type="text" />,
+  editor: ForecastingEditor,
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { ModelOptions } from './ids';
 import { ModelProps, vuMlModel, vuMLModelOptions } from './vuMlModel';
 
-export const emptyEditor: React.FC<ModelProps> = ({ modelId }) => {
+export const insightsEditor: React.FC<ModelProps> = ({ modelId }) => {
   return (
     <div>
       <h1>No configuration required</h1>
@@ -11,7 +11,7 @@ export const emptyEditor: React.FC<ModelProps> = ({ modelId }) => {
   );
 };
 
-export const emptyModel: vuMlModel<vuMLModelOptions> = {
-  ...ModelOptions.none,
-  editor: emptyEditor,
+export const insightsModel: vuMlModel<vuMLModelOptions> = {
+  ...ModelOptions.insights,
+  editor: insightsEditor,
 };

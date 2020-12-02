@@ -1,4 +1,4 @@
-import { vuMlModel } from './vuMlModel';
+import { vuMlModel, vuMLModelOptions } from './vuMlModel';
 
 export enum MlModelId {
   Empty = 'none',
@@ -27,47 +27,40 @@ export const ModelDescription: ModelDictionary<string> = {
     'The Vector Autoregression (VAR) method models the next step in each time series using an AR model. It is the generalization of AR to multiple parallel time series, e.g. multivariate time series.',
 };
 
-export const ModelOptions: ModelDictionary<vuMlModel<{}>> = {
+export const ModelOptions: ModelDictionary<vuMlModel<vuMLModelOptions>> = {
   [MlModelId.Anamoly]: {
     id: MlModelId.Anamoly,
     description: ModelDescription.anamoly,
     name: 'Anamoly Detection',
-    options: {},
   },
   [MlModelId.Forecasting]: {
     id: MlModelId.Forecasting,
     description: ModelDescription.forecasting,
     name: 'Forecasting Model',
-    options: {},
   },
   [MlModelId.Insights]: {
     id: MlModelId.Insights,
     description: ModelDescription.insights,
     name: 'Insights',
-    options: {},
   },
   [MlModelId.Empty]: {
     id: MlModelId.Empty,
     description: ModelDescription.none,
     name: 'Empty',
-    options: {},
   },
   [MlModelId.OPI]: {
     id: MlModelId.OPI,
     description: ModelDescription.opi,
     name: 'OPI Index',
-    options: {},
   },
   [MlModelId.SES]: {
     id: MlModelId.SES,
     description: ModelDescription.ses,
     name: 'Simple Exponential Smoothing',
-    options: {},
   },
   [MlModelId.VAR]: {
     id: MlModelId.VAR,
     description: ModelDescription.var,
     name: 'Vector Autoregression',
-    options: {},
   },
 };
