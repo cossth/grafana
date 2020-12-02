@@ -20,7 +20,7 @@ export const ModelDescription: ModelDictionary<string> = {
   [MlModelId.Forecasting]: 'Trains a model and start forecasting values for the metric.',
   [MlModelId.Insights]: 'Insights',
   [MlModelId.Empty]: 'Simple Model that does nothing.',
-  [MlModelId.OPI]: 'OPI',
+  [MlModelId.OPI]: 'Operational Predictive Modelling',
   [MlModelId.SES]:
     'The Simple Exponential Smoothing (SES) method models the next time step as an exponentially weighted linear function of observations at prior time steps.',
   [MlModelId.VAR]:

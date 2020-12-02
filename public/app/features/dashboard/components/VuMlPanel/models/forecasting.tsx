@@ -4,13 +4,11 @@ import { vuMlModel } from './vuMlModel';
 
 export interface ForcastingOptions {}
 
+export const fmEditor: React.FC<{}> = () => {
+  return <input type="text" />;
+};
+
 export const forecastingModel: vuMlModel<ForcastingOptions> = {
   ...ModelOptions.forecasting,
-  editor: () => {
-    return (
-      <>
-        <input type="text" />
-      </>
-    );
-  },
+  editor: () => <input type="text" />,
 };

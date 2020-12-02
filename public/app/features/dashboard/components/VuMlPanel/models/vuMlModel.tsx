@@ -7,5 +7,5 @@ export interface vuMlModel<TOptions extends ModelOptions = {}> {
   name: string;
   description: string;
   options: TOptions;
-  editor?: React.FC;
+  editor?: () => any;
 }
